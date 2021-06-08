@@ -3,8 +3,8 @@
 <h2>Lista de cursoso e meu progresso pessoal </h2>
 
 <p>:white_check_mark: Web Design Completo <a target="_blank" href="https://www.origamid.com/certificate/f39fb884/"  title="Certificado">🏆</a></p>
-<p>:white_square_button: CSS Flexbox :hourglass:</p>
-<p>:white_large_square: CSS Grid Layout </p>
+<p>:white_check_mark: CSS Flexbox </p>
+<p>:white_square_button: CSS Grid Layout :hourglass:</p>
 <p>:white_large_square: JavaScript Completo ES6 </p>
 <p>:white_large_square: UI Design Avançado ES6 </p>
 <p>:white_large_square: React Completo</p>
