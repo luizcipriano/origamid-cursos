@@ -25,7 +25,7 @@ var carro = {
   
   let cachorro = {
       raca : 'labrador',
-      cor  : 'preto'
+      cor  : 'preto',
       idade : 10,
       latir(pessoa){
           if(pessoa === 'homen'){
