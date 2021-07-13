@@ -1,37 +1,21 @@
-const animais = document.getElementById('animais');
-console.log(animais)
+const imgs = document.querySelectorAll('img')
 
 
-const gridSection = document.getElementsByClassName('grid-section');
-console.log(gridSection[1]);
 
-const primeiraLi = document.querySelector('li');
-console.log(primeiraLi.innerText);
-
-const primeiraUl = document.querySelector('ul')
-console.log(primeiraUl)
-
-const linksInternos = document.querySelector('[href^="#"]')
-console.log(linksInternos);
-
-const animaisImg = document.querySelectorAll('.animais img')
-console.log(animaisImg[2]);
-
-const gridSectionHTML = document.getElementsByClassName('grid-section');
-const gridSectionNode = document.querySelectorAll('.grid-section');
-
-// primeiraUl.classList.add('grid-section')
+imgs.forEach(function(item, index, array){
+    console.log(item, index, array)
+});
 
 
-// console.log(gridSectionHTML)
-// console.log(gridSectionNode)
 
-gridSectionNode.forEach(function(item, index){
-    console.log(item)
-})
+const titulos = document.getElementsByClassName('titulo');
+const titulosArray = Array.from(titulos);
 
-const arrayGrid = Array.from(gridSectionHTML);
+// titulosArray.forEach(function(item, index, array){
+//   console.log(item, index, array);
+// });
+// MESMO CODIGO AGORA IMPLEMENTANDO O ARROW FUNCTION
 
-arrayGrid.forEach(function(item){
-    console.log(item)
-})
+titulosArray.forEach((item, index, array) => {
+    console.log(item, index, array)
+});
