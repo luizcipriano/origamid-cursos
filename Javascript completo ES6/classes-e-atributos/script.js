@@ -18,10 +18,11 @@ menuAtivo.forEach((item, index) =>{
 
 // Verifique se as imagens possuem o atributo alt
 
-const img = document.querySelectorAll('img');
+const imgs = document.querySelectorAll('img');
 
-img.forEach((item) => {
-    console.log(item.hasAttribute('alt'))
+
+imgs.forEach((img) => {
+    console.log(img.hasAttribute('alt'))
 })
 
 // Modifique o href do link externo no menu
