@@ -1,51 +1,53 @@
-// Verifique a distância da primeira imagem
-// em relação ao topo da página
+// Quando o usuário clicar nos links internos do site,
+// adicione a classe ativo ao item clicado e remova dos
+// demais itens caso eles possuam a mesma. Previna
+// o comportamento padrão desses links
 
-const firstImg = document.querySelector('img')
-console.log(firstImg.offsetTop)
+const links = document.querySelectorAll('a[href^="#"]');
 
-// Retorne a soma da largura de todas as imagens
 
-function somaImagens(){
-    const imagens = document.querySelectorAll('img');
-    let soma = 0;
-    imagens.forEach((imagem)=>{
-        soma += imagem.offsetWidth
-    });
-    console.log(soma)
-}
+function ativaLink(event) {
+    event.preventDefault();
+    links.forEach((link)=>{
+        link.classList.remove('ativo')
+    })
+    event.currentTarget.classList.add('ativo')
+};
 
-window.onload = function(){
-    somaImagens();
-}
 
-// Verifique se os links da página possuem
-// o mínimo recomendado para telas utilizadas
-// com o dedo. (48px/48px de acordo com o google)
-
-const links = document.querySelectorAll('a')
-links.forEach((link) => {
-    const linkHeight = link.offsetHeight
-    const linkWidth = link.offsetWidth
-    if(linkHeight >= 48 && linkWidth >= 48){
-        console.log(link, 'Possui boa acessibilidade')
-    }else{
-        console.log(link,'Não possui boa acessibilidade')
-    }
+links.forEach((link)=> {
+    link.addEventListener('click', ativaLink)
 })
 
+// Selecione todos os elementos do site começando a partir do body,
+// ao clique mostre exatamente quais elementos estão sendo clicados
 
-// Se o browser for menor que 720px,
-// adicione a classe menu-mobile ao menu
+const geral = document.querySelector('body *')
 
-const menu = document.querySelector('.menu')
-
-const menor = window.matchMedia('(max-width: 720px)')
-
-if (menor.matches) {
-        menu.classList.toggle('menu-mobile')
-        console.log('é mobile')
-}else{
-    menu.classList.remove('menu-mobile')
-    console.log('é desktop')
+function quemEh(event){
+    const currentTarget = event.target;
+    console.log(currentTarget);
 }
+
+geral.addEventListener('click', quemEh);
+
+// Utilizando o código anterior, ao invés de mostrar no console,
+// remova o elemento que está sendo clicado, o método remove() remove um elemento
+
+
+function remover(event){
+    const target = event.target;
+    target.remove()
+}
+
+geral.addEventListener('click', remover);
+
+// Se o usuário clicar na tecla (t), aumente todo o texto do site. 
+
+function aumentarFonte(event){
+    if(event.key === 't'){
+        document.body.classList.toggle('font')
+    }
+}
+
+window.addEventListener('keydown', aumentarFonte)
