@@ -31,7 +31,7 @@ let html = `<section>
 // Substitua section por ul e div com li,
 // utilizando split e join
 console.log(html);
-html = html.split('section');
+html = html.split('section').join('ul').split('div').join('li');
 console.log(html);
 html = html.join('ul')
 console.log(html);
@@ -39,6 +39,7 @@ html = html.split('div');
 console.log(html);
 html = html.join('li');
 console.log(html);
+
 
 
 const carros = ['Ford', 'Fiat', 'VW', 'Honda'];
