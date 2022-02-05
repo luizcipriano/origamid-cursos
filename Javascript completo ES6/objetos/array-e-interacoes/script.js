@@ -2,6 +2,11 @@
 // com objetos contendo o título, descricao,
 // aulas e horas de cada curso
 
+const cursos = document.querySelectorAll('.curso');
+
+console.log(cursos.forEach((item, index, array) =>{
+  array[index] =  item
+}))
 
 // Retorne uma lista com os
 // números maiores que 100
