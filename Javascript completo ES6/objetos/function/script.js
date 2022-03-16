@@ -18,7 +18,7 @@ const total = Array.prototype.reduce.call(paragrafos, (acumulador, item) => {
 function criarElemento(tag, classe, conteudo){
   const elemento = document.createElement(tag);
   classe ? elemento.classList.add(classe): '';
-  classe ? elemento.innerHTML = conteudo : '' ;
+  conteudo ? elemento.innerHTML = conteudo : '' ;
 
   return elemento
 }
@@ -29,3 +29,14 @@ console.log(criarElemento('li','ativo', 'vlw jamal' ))
 // Crie uma nova função utilizando a anterior como base
 // essa nova função deverá sempre criar h1 com a
 // classe titulo. Porém o parâmetro conteudo continuará dinâmico
+
+
+function titulo(conteudo){
+  const titulo = document.createElement('h1');
+  titulo.classList.add('titulo');
+  conteudo ? titulo.innerHTML = conteudo : '';
+
+  return titulo
+}
+
+console.log(titulo('aindaaa'))
