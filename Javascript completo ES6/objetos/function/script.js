@@ -1,66 +1,31 @@
-// Selecione cada curso e retorne uma array
-// com objetos contendo o título, descricao,
-// aulas e horas de cada curso
+// Retorne a soma total de caracteres dos
+// parágrafos acima utilizando reduce
+const paragrafos = document.querySelectorAll('p');
 
-const cursos = document.querySelectorAll('.curso');
-const cursosLista = Array.from(cursos)
-const objetosCurso = cursosLista.map((cursos) => {
-  const titulo = cursos.querySelector('h1').innerText;
-  const descricao = cursos.querySelector('p').innerText;
-  const aulas = cursos.querySelector('.aulas').innerText;
-  const horas = cursos.querySelector('.horas').innerText;
-  return {
-    titulo,
-    descricao,
-    aulas,
-    horas
-  }
-})
+const total = Array.prototype.reduce.call(paragrafos, (acumulador, item) => {
+  // console.log(item.innerHTML.length)
+  return acumulador + item.innerHTML.length
+}, 0)
 
-console.log(objetosCurso)
-
-// Retorne uma lista com os
-// números maiores que 100
-const numeros = [3, 44, 333, 23, 122, 322, 33, 100];
-const numerosMaior100 = numeros.filter(x => x >= 100);
-console.log(numerosMaior100);
-
-// Verifique se Baixo faz parte
-// da lista de instrumentos e retorne true
-const instrumentos = ['Guitarra', 'Baixo', 'Bateria', 'Teclado']
-const instrumentoBaixo = instrumentos.some((instrumento) =>{
-  return instrumento === "Baixo";
-})
-console.log(instrumentoBaixo)
-
-// Retorne o valor total das compras
-const compras = [
-  {
-    item: 'Banana',
-    preco: 'R$ 4,99'
-  },
-  {
-    item: 'Ovo',
-    preco: 'R$ 2,99'
-  },
-  {
-    item: 'Carne',
-    preco: 'R$ 25,49'
-  },
-  {
-    item: 'Refrigerante',
-    preco: 'R$ 5,35'
-  },
-  {
-    item: 'Quejo',
-    preco: 'R$ 10,60'
-  }
-]
-const total = compras.reduce((a, item) =>{
-  const precoLimpo = +item.preco.replace('R$', '').replace(',', '.');
-  return a + precoLimpo
-},0)
+// console.log(total)
+// console.log(paragrafos)
 
 
 
-console.log(total);
+// Crie uma função que retorne novos elementos
+// html, com os seguintes parâmetros
+// tag, classe e conteudo.
+function criarElemento(tag, classe, conteudo){
+  const elemento = document.createElement(tag);
+  classe ? elemento.classList.add(classe): '';
+  classe ? elemento.innerHTML = conteudo : '' ;
+
+  return elemento
+}
+console.log(criarElemento('li','ativo', 'vlw jamal' ))
+
+
+
+// Crie uma nova função utilizando a anterior como base
+// essa nova função deverá sempre criar h1 com a
+// classe titulo. Porém o parâmetro conteudo continuará dinâmico
