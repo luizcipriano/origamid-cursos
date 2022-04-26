@@ -1,0 +1,14 @@
+body{
+  background: #333;
+}
+h1{
+  color: crimson;
+}
+.cep{
+  font-size: 30px;
+  color: #fff;
+  text-transform: capitalize;
+  margin: 2rem;
+  display: flex;
+  gap: .5rem;
+}
