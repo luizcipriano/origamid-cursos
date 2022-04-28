@@ -12,3 +12,11 @@ h1{
   display: flex;
   gap: .5rem;
 }
+.bitcoin{
+  color: #fff;
+  font-size: x-large;
+}
+.joke{
+  color: #fff;
+  font-size: x-large;
+}
